@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import CounterHooks from "./CounterHooks";
+
+export const ThemeContext = React.createContext();
 
 function App() {
+  const [style, setStyle] = useState("red");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeContext.Provider value={{ backgroundColor: style }}>
+      <CounterHooks initValue={5} />
+      <br />
+      <button
+        onClick={() =>
+          setStyle((style) => {
+            return style === "red" ? "blue" : "red";
+          })
+        }
+      >
+        Toggle theme{" "}
+      </button>
+      <p>theme color: {style}</p>
+    </ThemeContext.Provider>
   );
 }
 
-export default App;
+export default App ;
