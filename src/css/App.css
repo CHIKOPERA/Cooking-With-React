@@ -1,3 +1,15 @@
+@import url(recipe-list.css);
+@import url(bootstrap.css);
+@import url(buttons.css);
+@import url(recipe.css);
+@import url(ingredient-list.css);
+@import url(recipe-edit.css);
+
+*,*::before,*::after{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -8,7 +20,7 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  .App-logo { 
     animation: App-logo-spin infinite 20s linear;
   }
 }
@@ -35,4 +47,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+html{
+  font-size: 15px;
+}
+body{
+  padding: 0;
+  margin: 0;
 }
